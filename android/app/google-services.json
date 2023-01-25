@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "310219780335",
+    "project_id": "kajuan-f2172",
+    "storage_bucket": "kajuan-f2172.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:310219780335:android:2ddc62fa4176c9a8866b1a",
+        "android_client_info": {
+          "package_name": "com.example.kajuan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "310219780335-ti5indvalc1nmicd92675hiu316akfj0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZHNMeLY1N1hemy05Ki_QU5OrRXMekm4k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "310219780335-ti5indvalc1nmicd92675hiu316akfj0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
