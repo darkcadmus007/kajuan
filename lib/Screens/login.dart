@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:kajuan/Screens/AdminDashboard.dart';
 import 'package:kajuan/Screens/Dashboard.dart';
 import 'package:kajuan/Screens/Home.dart';
 import 'package:kajuan/Screens/Register.dart';
@@ -62,7 +63,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ),                 
             SizedBox(height: size.height * 0.05),
             Text(
-              "Sign in to your account to access your Loyalty QR code",
+              "Sign in to access your Discount QR code",
               style: TextStyle(color: txtColorDark, fontSize: 15),
               textAlign: TextAlign.center,
             ),
@@ -105,8 +106,19 @@ class _LoginScreenState extends State<LoginScreen> {
                 textColor: txtColorLight,
               bgcolor: txtColorDark,
               text: "LOGIN",
-              press: () {                   
-                Navigator.push(
+              press: () {   
+                if(txtEmail.text=='admin'&&txtPass.text=='admin'){
+                  Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return AdminDashboard();
+                    },
+                  ),
+                );           
+                }  
+                else{
+                   Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) {
@@ -114,6 +126,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     },
                   ),
                 );
+                }              
+               
               },
             ),
             SizedBox(height: size.height * 0.03),

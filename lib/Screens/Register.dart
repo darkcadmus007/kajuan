@@ -1,6 +1,9 @@
+import 'dart:html';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:kajuan/Screens/login.dart';
+import 'package:kajuan/Services/auth.dart';
 import 'package:kajuan/Utilities/constants.dart';
 import 'package:kajuan/components/already_have_an_account_acheck.dart';
 import 'package:kajuan/components/rounded_button.dart';
@@ -8,23 +11,27 @@ import 'package:kajuan/components/rounded_input_field.dart';
 import 'package:kajuan/components/rounded_password_field.dart';
 
 class Register extends StatefulWidget {
-  const Register({
-    Key? key,
-  }) : super(key: key);
+  
+  // final Function toggleView;
+  // Register({required this.toggleView});
   
   @override
-  _RegisterState createState() => _RegisterState();
+ _RegisterState createState()=> _RegisterState();
 }
+
 class _RegisterState extends State<Register> {
  final TextEditingController txtEmail = TextEditingController();
   final TextEditingController txtPass = TextEditingController();
+   final TextEditingController txtName = TextEditingController();
+    final TextEditingController txtAdd = TextEditingController();
+     final TextEditingController txtPhone = TextEditingController();
+  final AuthService _auth = AuthService();
+  final _formKey = GlobalKey<FormState>();
+
+  String email = '';
+  String password = '';
 
    @override
-  void initState() {    
-    super.initState();
-  }
-
-    @override
 Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
@@ -61,21 +68,21 @@ Widget build(BuildContext context) {
              RoundedInputField(
               icon: Icons.person,
               isEnable: true,
-              controller: txtEmail,
+              controller: txtName,
               hintText: "Full Name",
               onChanged: (value) {},
             ),  
             RoundedInputField(
               icon: Icons.place,
               isEnable: true,
-              controller: txtEmail,
+              controller: txtAdd,
               hintText: "Address",
               onChanged: (value) {},
             ),   
              RoundedInputField(
               icon: Icons.send_to_mobile,
               isEnable: true,
-              controller: txtEmail,
+              controller: txtPhone,
               hintText: "Phone Number",
               onChanged: (value) {},
             ), 
@@ -119,7 +126,7 @@ Widget build(BuildContext context) {
               bgcolor: txtColorDark,
               text: "SIGNUP",
               press: () {                
-                // validateSignup();
+                validateSignup();
               },
             ),
             SizedBox(height: size.height * 0.03),
@@ -141,4 +148,5 @@ Widget build(BuildContext context) {
       ),
     ); 
   }
+
 }
